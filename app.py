@@ -14,9 +14,10 @@ if uploaded_file:
     
     st.write("Preview of Data:")
     st.dataframe(df.head())
+    first_row = df.iloc[0]
 
     # separate columns into individuals
-    parsed = [col.strip().strip('"') for col in parsed]  # Clean quotes if needed
+    parsed = [col.strip().strip('"') for col in first_row]  # Clean quotes if needed
     x_col, y_obs_col, weight_col, y_calc_col, y_bkg_col, q_col = parsed
 
 

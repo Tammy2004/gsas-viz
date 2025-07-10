@@ -16,7 +16,7 @@ if uploaded_file:
     st.dataframe(df.head())
     st.write("Column names:", df.columns.tolist())
     column_names = df.columns.tolist()
-    cleaned_header = column_names.strip('"')
+    cleaned_header = column_names[0].strip('"')
     columns = next(csv.reader(StringIO(cleaned_header)))
     x_col, y_obs_col, weight_col, y_calc_col, y_bkg_col, q_col = columns
 

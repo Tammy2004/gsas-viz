@@ -8,7 +8,7 @@ st.title("GSAS Peak Visualizer")
 uploaded_file = st.file_uploader("Upload GSAS CSV file", type="csv")
 
 if uploaded_file:
-    df = pd.read_csv(uploaded_file, skiprows=36, delim_whitespace=True, engine='python')
+    df = pd.read_csv(uploaded_file, skiprows=37, delim_whitespace=True, engine='python')
     
     st.write("Preview of Data:")
     st.dataframe(df.head())

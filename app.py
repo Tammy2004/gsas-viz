@@ -16,8 +16,8 @@ if uploaded_file:
     st.dataframe(df.head())
 
     # separate columns into individuals
-    reader = csv.reader(StringIO(df.head()))
-    headers = next(reader)
+    st.write("Parsed column names:", list(df.columns))
+
 
     x = df["x"]
     y_obs = df["y_obs"]

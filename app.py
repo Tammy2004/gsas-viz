@@ -18,12 +18,7 @@ if uploaded_file:
     column_names = df.columns.tolist()
     cleaned_header = column_names[0].strip('"')
     columns = next(csv.reader(StringIO(cleaned_header)))
-    x_col, y_obs_col, weight_col, y_calc_col, y_bkg_col, q_col = columns
-
-
-
-    x = df["x"]
-    y_obs = df["y_obs"]
+    x, y_obs, weight, y_calc, y_bkg, q = columns
     
     # Simulated predicted peak (just Gaussian for now)
     center = st.slider("Peak center", min_value=float(x.min()), max_value=float(x.max()), value=30.0)

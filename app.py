@@ -16,7 +16,8 @@ if uploaded_file:
     st.dataframe(df.head())
 
     # separate columns into individuals
-    st.write("Parsed column names:", list(df.columns))
+    parsed = [col.strip().strip('"') for col in parsed]  # Clean quotes if needed
+    x_col, y_obs_col, weight_col, y_calc_col, y_bkg_col, q_col = parsed
 
 
     x = df["x"]

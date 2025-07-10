@@ -2,6 +2,8 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 import plotly.graph_objects as go
+import csv
+from io import StringIO
 
 st.title("GSAS Peak Visualizer")
 
@@ -12,6 +14,10 @@ if uploaded_file:
     
     st.write("Preview of Data:")
     st.dataframe(df.head())
+
+    # separate columns into individuals
+    reader = csv.reader(StringIO(df.head()))
+    headers = next(reader)
 
     x = df["x"]
     y_obs = df["y_obs"]

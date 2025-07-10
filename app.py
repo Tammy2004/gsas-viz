@@ -18,6 +18,7 @@ if uploaded_file:
 
     # separate columns into individuals
     parsed = [col.strip().strip('"') for col in first_row]  # Clean quotes if needed
+    print(parsed)
     x_col, y_obs_col, weight_col, y_calc_col, y_bkg_col, q_col = parsed
 
 
